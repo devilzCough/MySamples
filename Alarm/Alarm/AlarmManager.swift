@@ -21,8 +21,6 @@ class AlarmManager {
         Alarm(time: "오전 10:00"),
         Alarm(time: "오후 3:20")
     ]
-//    private var onAlarms: [Alarm] = []
-//    private var offAlarms: [Alarm] = []
     
     var count: Int {
         get {
@@ -36,6 +34,10 @@ class AlarmManager {
     
     func add(alarm: Alarm) {
         alarms.append(alarm)
+    }
+    
+    func delete(alarmRowAt index: Int) {
+        alarms.remove(at: index)
     }
     
     func alarmSwitched(to isOn: Bool, alarmRowAt index: Int) {

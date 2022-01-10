@@ -73,9 +73,12 @@ extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let delete = UIContextualAction(style: .normal, title: "Delete") { _,_,success in
-            print("Delete")
-            success(true)
+        let delete = UIContextualAction(style: .normal, title: "Delete") { [weak self] _, _, completion in
+            self?.alarmManager.delete(alarmRowAt: indexPath.row)
+            DispatchQueue.main.async {
+                self?.alarmTableView.reloadData()
+            }
+            completion(true)
         }
         delete.backgroundColor = .red
         
