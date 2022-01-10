@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D86533A278C70680088C498 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D865339278C70680088C498 /* AlarmManager.swift */; };
 		0D8CB7E5278C435100C02B77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8CB7E4278C435100C02B77 /* AppDelegate.swift */; };
 		0D8CB7E7278C435100C02B77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8CB7E6278C435100C02B77 /* SceneDelegate.swift */; };
 		0D8CB7E9278C435100C02B77 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8CB7E8278C435100C02B77 /* AlarmListViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D865339278C70680088C498 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		0D8CB7E1278C435100C02B77 /* Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D8CB7E4278C435100C02B77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D8CB7E6278C435100C02B77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				0D8CB7EF278C435200C02B77 /* LaunchScreen.storyboard */,
 				0D8CB7F2278C435200C02B77 /* Info.plist */,
 				0D8CB7FC278C4CA600C02B77 /* Date+String+Converter.swift */,
+				0D865339278C70680088C498 /* AlarmManager.swift */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D86533A278C70680088C498 /* AlarmManager.swift in Sources */,
 				0D8CB7E9278C435100C02B77 /* AlarmListViewController.swift in Sources */,
 				0D8CB7FB278C48B900C02B77 /* AlarmDetailViewController.swift in Sources */,
 				0D8CB7E5278C435100C02B77 /* AppDelegate.swift in Sources */,

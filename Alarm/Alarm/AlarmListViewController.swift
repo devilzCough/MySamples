@@ -7,19 +7,11 @@
 
 import UIKit
 
-struct Alarm {
-    var time: String
-    var isOn = true
-}
-
 class AlarmListViewController: UIViewController {
 
     @IBOutlet weak var alarmTableView: UITableView!
     
-    var alarms: [Alarm] = [
-        Alarm(time: "오전 10:00"),
-        Alarm(time: "오후 4:24")
-    ]
+    private let alarmManager = AlarmManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +31,7 @@ class AlarmListViewController: UIViewController {
                 alarmDetailVC?.editMode = true
                 if let selectedRow = alarmTableView.indexPathForSelectedRow?.row {
                     alarmDetailVC?.selectedRow = selectedRow
-                    alarmDetailVC?.time = alarms[selectedRow].time.convertToDate()
+                    alarmDetailVC?.time = alarmManager.getAlarm(at: selectedRow).time.convertToDate()
                 }
             }
         }
@@ -49,12 +41,12 @@ class AlarmListViewController: UIViewController {
 extension AlarmListViewController: AlarmSaving {
     
     func saveAlarm(time: String) {
-        alarms.append(Alarm(time: time))
+        alarmManager.add(alarm: Alarm(time: time))
         alarmTableView.reloadData()
     }
     
     func editAlarm(at row: Int, time: String) {
-        alarms[row] = Alarm(time: time)
+        alarmManager.setAlarmTime(to: time, at: row)
         alarmTableView.reloadData()
     }
 }
@@ -62,13 +54,15 @@ extension AlarmListViewController: AlarmSaving {
 extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return alarms.count
+        return alarmManager.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AlarmTableViewCell.identifier, for: indexPath) as? AlarmTableViewCell else { return UITableViewCell() }
         
-        cell.configure(alarm: alarms[indexPath.row])
+        cell.delegate = self
+        cell.indexPath = indexPath
+        cell.configure(alarm: alarmManager.getAlarm(at: indexPath.row))
         
         return cell
     }
@@ -86,5 +80,12 @@ extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
         delete.backgroundColor = .red
         
         return UISwipeActionsConfiguration(actions: [delete])
+    }
+}
+
+extension AlarmListViewController: AlarmCellDelegate {
+    
+    func alarmSwitched(to isOn: Bool, _ indexPath: IndexPath) {
+        alarmManager.alarmSwitched(to: isOn, alarmRowAt: indexPath.row)
     }
 }

@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol AlarmCellDelegate: AnyObject {
+    func alarmSwitched(to isOn: Bool, _ indexPath: IndexPath)
+}
+
 class AlarmTableViewCell: UITableViewCell {
     
     static let identifier = "AlarmTableViewCell"
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var onOffSwitch: UISwitch!
+    
+    var indexPath: IndexPath?
+    weak var delegate: AlarmCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,5 +35,12 @@ class AlarmTableViewCell: UITableViewCell {
     func configure(alarm: Alarm) {
         timeLabel.text = alarm.time
         onOffSwitch.isOn = alarm.isOn
+    }
+    
+    @IBAction func didTapOnOffSwitch(_ sender: UISwitch) {
+        
+        guard let indexPath = indexPath else { return }
+        print(sender.isOn)
+        delegate?.alarmSwitched(to: sender.isOn, indexPath)
     }
 }
