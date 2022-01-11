@@ -9,7 +9,7 @@ import UIKit
 
 protocol AlarmSaving: AnyObject {
     func saveAlarm(time: String)
-    func editAlarm(at row: Int, time: String)
+    func editAlarm(at indexPath: IndexPath, time: String)
 }
 
 class AlarmDetailViewController: UIViewController {
@@ -21,7 +21,7 @@ class AlarmDetailViewController: UIViewController {
     var time = Date()
     
     var editMode = false
-    var selectedRow: Int?
+    var indexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +33,8 @@ class AlarmDetailViewController: UIViewController {
         
         time = alarmDatePicker.date
         
-        if editMode, let row = selectedRow {
-            delegate?.editAlarm(at: row, time: time.convertToString(format: .displayTime))
+        if editMode, let indexPath = indexPath {
+            delegate?.editAlarm(at: indexPath, time: time.convertToString(format: .displayTime))
         } else {
             delegate?.saveAlarm(time: time.convertToString(format: .displayTime))
         }

@@ -13,6 +13,11 @@ class AlarmListViewController: UIViewController {
     
     private let alarmManager = AlarmManager.shared
     
+    private let sections = [
+        "대기 중 알람",
+        "기타"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -29,9 +34,9 @@ class AlarmListViewController: UIViewController {
             if segue.identifier == "AlarmEditSegue" {
                 alarmDetailVC?.title = "알람 편집"
                 alarmDetailVC?.editMode = true
-                if let selectedRow = alarmTableView.indexPathForSelectedRow?.row {
-                    alarmDetailVC?.selectedRow = selectedRow
-                    alarmDetailVC?.time = alarmManager.getAlarm(at: selectedRow).time.convertToDate()
+                if let indexPath = alarmTableView.indexPathForSelectedRow {
+                    alarmDetailVC?.indexPath = indexPath
+                    alarmDetailVC?.time = alarmManager.getAlarm(at: indexPath.row, in: indexPath.section).time.convertToDate()
                 }
             }
         }
@@ -45,8 +50,8 @@ extension AlarmListViewController: AlarmSaving {
         alarmTableView.reloadData()
     }
     
-    func editAlarm(at row: Int, time: String) {
-        alarmManager.setAlarmTime(to: time, at: row)
+    func editAlarm(at indexPath: IndexPath, time: String) {
+        alarmManager.setAlarmTime(to: time, at: indexPath)
         alarmTableView.reloadData()
     }
 }
@@ -54,7 +59,7 @@ extension AlarmListViewController: AlarmSaving {
 extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return alarmManager.count
+        return alarmManager.count(of: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,7 +67,7 @@ extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.delegate = self
         cell.indexPath = indexPath
-        cell.configure(alarm: alarmManager.getAlarm(at: indexPath.row))
+        cell.configure(alarm: alarmManager.getAlarm(at: indexPath.row, in: indexPath.section))
         
         return cell
     }
@@ -74,7 +79,7 @@ extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let delete = UIContextualAction(style: .normal, title: "Delete") { [weak self] _, _, completion in
-            self?.alarmManager.delete(alarmRowAt: indexPath.row)
+            self?.alarmManager.delete(alarmRowAt: indexPath)
             DispatchQueue.main.async {
                 self?.alarmTableView.reloadData()
             }
@@ -84,11 +89,21 @@ extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
         
         return UISwipeActionsConfiguration(actions: [delete])
     }
+    
+    // Header
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+        
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section]
+    }
 }
 
 extension AlarmListViewController: AlarmCellDelegate {
     
     func alarmSwitched(to isOn: Bool, _ indexPath: IndexPath) {
-        alarmManager.alarmSwitched(to: isOn, alarmRowAt: indexPath.row)
+        alarmManager.alarmSwitched(to: isOn, alarmRowAt: indexPath)
+        alarmTableView.reloadData()
     }
 }
