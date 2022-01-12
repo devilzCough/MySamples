@@ -68,6 +68,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="알람" id="G7T-fh-SVl">
+                        <barButtonItem key="leftBarButtonItem" systemItem="play" id="Rbw-sd-7vz">
+                            <connections>
+                                <action selector="didTapTestButton:" destination="BYZ-38-t0r" id="xzt-C0-wUj"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YxI-XO-rZY">
                             <connections>
                                 <segue destination="WuN-Wf-Zkl" kind="presentation" id="8uZ-Ob-9Cy"/>
