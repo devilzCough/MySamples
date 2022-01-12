@@ -73,11 +73,14 @@ class AlarmListViewController: UIViewController {
 
         let seconds: Double = 10
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
+        
+        
         let request = UNNotificationRequest(identifier: "testNotification",
                                            content: content,
                                            trigger: trigger)
 
         notification.add(request) { error in
+            print("success")
            if let error = error {
                print("Notification Error: ", error)
            }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D86533A278C70680088C498 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D865339278C70680088C498 /* AlarmManager.swift */; };
 		0D86533C278EAF4C0088C498 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D86533B278EAF4C0088C498 /* alarm.mp3 */; };
+		0D86533E278EB3160088C498 /* AlarmOffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D86533D278EB3160088C498 /* AlarmOffViewController.swift */; };
 		0D8CB7E5278C435100C02B77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8CB7E4278C435100C02B77 /* AppDelegate.swift */; };
 		0D8CB7E7278C435100C02B77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8CB7E6278C435100C02B77 /* SceneDelegate.swift */; };
 		0D8CB7E9278C435100C02B77 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8CB7E8278C435100C02B77 /* AlarmListViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		0D865339278C70680088C498 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		0D86533B278EAF4C0088C498 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alarm.mp3; path = ../../../../../../../Downloads/alarm.mp3; sourceTree = "<group>"; };
+		0D86533D278EB3160088C498 /* AlarmOffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmOffViewController.swift; sourceTree = "<group>"; };
 		0D8CB7E1278C435100C02B77 /* Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D8CB7E4278C435100C02B77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D8CB7E6278C435100C02B77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				0D8CB7FC278C4CA600C02B77 /* Date+String+Converter.swift */,
 				0D865339278C70680088C498 /* AlarmManager.swift */,
 				0D86533B278EAF4C0088C498 /* alarm.mp3 */,
+				0D86533D278EB3160088C498 /* AlarmOffViewController.swift */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				0D8CB7E5278C435100C02B77 /* AppDelegate.swift in Sources */,
 				0D8CB7FD278C4CA600C02B77 /* Date+String+Converter.swift in Sources */,
 				0D8CB7E7278C435100C02B77 /* SceneDelegate.swift in Sources */,
+				0D86533E278EB3160088C498 /* AlarmOffViewController.swift in Sources */,
 				0D8CB7F9278C471F00C02B77 /* AlarmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

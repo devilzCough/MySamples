@@ -36,9 +36,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
+        guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else {
+                return
+            }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(identifier: "AlarmOffViewController") as? AlarmOffViewController,
+           let navigationController = rootViewController as? UINavigationController {
+            vc.modalPresentationStyle = .fullScreen
+            navigationController.present(vc, animated: true, completion: nil)
+        }
+        
+        
+        
         completionHandler()
     }
 

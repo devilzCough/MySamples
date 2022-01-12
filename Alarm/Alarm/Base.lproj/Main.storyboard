@@ -148,7 +148,7 @@
         <!--Navigation Controller-->
         <scene sceneID="g5j-b4-Otx">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y70-iD-xHS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="y70-iD-xHS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eRb-lE-vYs">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -180,6 +180,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YY4-z2-VDZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1502.8985507246377" y="83.705357142857139"/>
+        </scene>
+        <!--Alarm Off View Controller-->
+        <scene sceneID="GKt-Rd-g5h">
+            <objects>
+                <viewController storyboardIdentifier="AlarmOffViewController" id="P2l-fA-Aei" customClass="AlarmOffViewController" customModule="Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E0g-gI-ZfL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAu-jJ-dJP">
+                                <rect key="frame" x="169" y="432.5" width="76.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="알람 끄기"/>
+                                <connections>
+                                    <action selector="didTapAlarmOffButton:" destination="P2l-fA-Aei" eventType="touchUpInside" id="Uq0-aA-Jai"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bLJ-V5-ozR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hAu-jJ-dJP" firstAttribute="centerX" secondItem="E0g-gI-ZfL" secondAttribute="centerX" id="BdX-z4-HFE"/>
+                            <constraint firstItem="hAu-jJ-dJP" firstAttribute="centerY" secondItem="E0g-gI-ZfL" secondAttribute="centerY" id="b8o-wy-Zad"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9t-kP-iH0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1503" y="747"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
