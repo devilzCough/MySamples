@@ -36,7 +36,7 @@ class AlarmListViewController: UIViewController {
     
     //test
     func requestNotificationAuthorization() {
-        let authOption = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
+        let authOption = UNAuthorizationOptions(arrayLiteral: .alert, .sound)
         notification.requestAuthorization(options: authOption) { success, error in
             if let error = error {
                 print(error)
@@ -66,7 +66,7 @@ class AlarmListViewController: UIViewController {
         
         let content = UNMutableNotificationContent()
 
-        content.title = "알림 테스트"
+        content.title = "알람"
         content.body = "이것은 알림을 테스트 하는 것이다"
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarm.mp3"))
         
@@ -80,7 +80,6 @@ class AlarmListViewController: UIViewController {
                                            trigger: trigger)
 
         notification.add(request) { error in
-            print("success")
            if let error = error {
                print("Notification Error: ", error)
            }
@@ -97,7 +96,7 @@ extension AlarmListViewController: AlarmSaving {
     
     func editAlarm(at indexPath: IndexPath, time: String) {
         alarmManager.setAlarmTime(to: time, at: indexPath)
-        alarmTableView.reloadData()
+        alarmTableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }
 

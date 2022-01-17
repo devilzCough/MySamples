@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D8420F02795B9F100478DF6 /* AlarmOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8420EF2795B9F100478DF6 /* AlarmOptionTableViewCell.swift */; };
 		0D86533A278C70680088C498 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D865339278C70680088C498 /* AlarmManager.swift */; };
 		0D86533C278EAF4C0088C498 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D86533B278EAF4C0088C498 /* alarm.mp3 */; };
 		0D86533E278EB3160088C498 /* AlarmOffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D86533D278EB3160088C498 /* AlarmOffViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D8420EF2795B9F100478DF6 /* AlarmOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmOptionTableViewCell.swift; sourceTree = "<group>"; };
 		0D865339278C70680088C498 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		0D86533B278EAF4C0088C498 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alarm.mp3; path = ../../../../../../../Downloads/alarm.mp3; sourceTree = "<group>"; };
 		0D86533D278EB3160088C498 /* AlarmOffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmOffViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,8 @@
 				0D8CB7E8278C435100C02B77 /* AlarmListViewController.swift */,
 				0D8CB7F8278C471F00C02B77 /* AlarmTableViewCell.swift */,
 				0D8CB7FA278C48B900C02B77 /* AlarmDetailViewController.swift */,
+				0D8420EF2795B9F100478DF6 /* AlarmOptionTableViewCell.swift */,
+				0D86533D278EB3160088C498 /* AlarmOffViewController.swift */,
 				0D8CB7EA278C435100C02B77 /* Main.storyboard */,
 				0D8CB7ED278C435200C02B77 /* Assets.xcassets */,
 				0D8CB7EF278C435200C02B77 /* LaunchScreen.storyboard */,
@@ -80,7 +84,6 @@
 				0D8CB7FC278C4CA600C02B77 /* Date+String+Converter.swift */,
 				0D865339278C70680088C498 /* AlarmManager.swift */,
 				0D86533B278EAF4C0088C498 /* alarm.mp3 */,
-				0D86533D278EB3160088C498 /* AlarmOffViewController.swift */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D86533A278C70680088C498 /* AlarmManager.swift in Sources */,
+				0D8420F02795B9F100478DF6 /* AlarmOptionTableViewCell.swift in Sources */,
 				0D8CB7E9278C435100C02B77 /* AlarmListViewController.swift in Sources */,
 				0D8CB7FB278C48B900C02B77 /* AlarmDetailViewController.swift in Sources */,
 				0D8CB7E5278C435100C02B77 /* AppDelegate.swift in Sources */,
