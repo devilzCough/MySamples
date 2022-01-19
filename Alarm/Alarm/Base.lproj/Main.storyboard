@@ -144,6 +144,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="알람 추가" id="COO-Nb-Fsk">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="KVJ-6S-2XW"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="GMq-KH-ERA">
                             <connections>
                                 <action selector="didTapCancelButton:" destination="9Kz-c1-XdO" id="4oK-OF-NRf"/>
@@ -158,6 +159,7 @@
                     <connections>
                         <outlet property="alarmDatePicker" destination="4sb-GO-PoS" id="nK6-Vq-5uS"/>
                         <outlet property="alarmOptionTableView" destination="Kcr-0i-hHM" id="vpG-o3-gGg"/>
+                        <segue destination="7DJ-Xz-qy1" kind="show" identifier="AlarmSoundSegue" id="yr8-dB-Cth"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fk1-X3-mZQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -228,6 +230,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9t-kP-iH0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1503" y="747"/>
+        </scene>
+        <!--사운드-->
+        <scene sceneID="Dmv-9f-ULz">
+            <objects>
+                <viewController storyboardIdentifier="AlarmSoundViewController" id="7DJ-Xz-qy1" customClass="AlarmSoundViewController" customModule="Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w4K-CB-o0N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eTT-Jh-UBn">
+                                <rect key="frame" x="0.0" y="56" width="414" height="786"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlarmSoundTableViewCell" textLabel="gQP-UL-YJp" detailTextLabel="SGj-s5-Equ" style="IBUITableViewCellStyleValue1" id="V7J-Wp-jBh">
+                                        <rect key="frame" x="20" y="49.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V7J-Wp-jBh" id="C3v-IT-iHh">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gQP-UL-YJp">
+                                                    <rect key="frame" x="20" y="15" width="25" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SGj-s5-Equ">
+                                                    <rect key="frame" x="321" y="15" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1WE-JK-qlc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eTT-Jh-UBn" firstAttribute="leading" secondItem="1WE-JK-qlc" secondAttribute="leading" id="7Cw-Xe-XQQ"/>
+                            <constraint firstItem="eTT-Jh-UBn" firstAttribute="top" secondItem="1WE-JK-qlc" secondAttribute="top" id="aex-Nb-JFB"/>
+                            <constraint firstItem="1WE-JK-qlc" firstAttribute="trailing" secondItem="eTT-Jh-UBn" secondAttribute="trailing" id="r0O-jc-iiN"/>
+                            <constraint firstItem="1WE-JK-qlc" firstAttribute="bottom" secondItem="eTT-Jh-UBn" secondAttribute="bottom" id="tV4-hC-uGw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="사운드" id="4oZ-B3-eW6"/>
+                    <connections>
+                        <outlet property="alarmSoundTableView" destination="eTT-Jh-UBn" id="NQz-1l-PJC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pv-gm-TU1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3009" y="84"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

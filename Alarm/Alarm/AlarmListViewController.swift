@@ -56,7 +56,7 @@ class AlarmListViewController: UIViewController {
                 alarmDetailVC?.editMode = true
                 if let indexPath = alarmTableView.indexPathForSelectedRow {
                     alarmDetailVC?.indexPath = indexPath
-                    alarmDetailVC?.time = alarmManager.getAlarm(at: indexPath.row, in: indexPath.section).time.convertToDate()
+                    alarmDetailVC?.alarm = alarmManager.getAlarm(at: indexPath.row, in: indexPath.section)
                 }
             }
         }
@@ -89,13 +89,13 @@ class AlarmListViewController: UIViewController {
 
 extension AlarmListViewController: AlarmSaving {
     
-    func saveAlarm(time: String) {
-        alarmManager.add(alarm: Alarm(time: time))
+    func saveAlarm(alarm: Alarm) {
+        alarmManager.add(alarm: alarm)
         alarmTableView.reloadData()
     }
     
-    func editAlarm(at indexPath: IndexPath, time: String) {
-        alarmManager.setAlarmTime(to: time, at: indexPath)
+    func editAlarm(at indexPath: IndexPath, alarm: Alarm) {
+        alarmManager.setAlarm(to: alarm, at: indexPath)
         alarmTableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D8420F02795B9F100478DF6 /* AlarmOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8420EF2795B9F100478DF6 /* AlarmOptionTableViewCell.swift */; };
-		0D8420F22796F29100478DF6 /* AlarmOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8420F12796F29100478DF6 /* AlarmOptions.storyboard */; };
 		0D8420F52796F2F200478DF6 /* AlarmSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8420F42796F2F200478DF6 /* AlarmSoundViewController.swift */; };
 		0D8420F72796F3C000478DF6 /* AlarmOptionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8420F62796F3C000478DF6 /* AlarmOptionConstants.swift */; };
 		0D8420F92796FF9900478DF6 /* Maple Leaf Rag.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D8420F82796FF9900478DF6 /* Maple Leaf Rag.mp3 */; };
@@ -28,7 +27,6 @@
 
 /* Begin PBXFileReference section */
 		0D8420EF2795B9F100478DF6 /* AlarmOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmOptionTableViewCell.swift; sourceTree = "<group>"; };
-		0D8420F12796F29100478DF6 /* AlarmOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmOptions.storyboard; sourceTree = "<group>"; };
 		0D8420F42796F2F200478DF6 /* AlarmSoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSoundViewController.swift; sourceTree = "<group>"; };
 		0D8420F62796F3C000478DF6 /* AlarmOptionConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmOptionConstants.swift; sourceTree = "<group>"; };
 		0D8420F82796FF9900478DF6 /* Maple Leaf Rag.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Maple Leaf Rag.mp3"; path = "../../../../../Sounds/Clip/Maple Leaf Rag.mp3"; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 		0D8420F32796F2B300478DF6 /* AlarmOptionScene */ = {
 			isa = PBXGroup;
 			children = (
-				0D8420F12796F29100478DF6 /* AlarmOptions.storyboard */,
 				0D8420F42796F2F200478DF6 /* AlarmSoundViewController.swift */,
 				0D8420F62796F3C000478DF6 /* AlarmOptionConstants.swift */,
 			);
@@ -171,7 +168,6 @@
 				0D8CB7F1278C435200C02B77 /* LaunchScreen.storyboard in Resources */,
 				0D8CB7EE278C435200C02B77 /* Assets.xcassets in Resources */,
 				0D8CB7EC278C435100C02B77 /* Main.storyboard in Resources */,
-				0D8420F22796F29100478DF6 /* AlarmOptions.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

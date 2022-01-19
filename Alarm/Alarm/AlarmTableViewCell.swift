@@ -33,7 +33,7 @@ class AlarmTableViewCell: UITableViewCell {
     }
 
     func configure(alarm: Alarm) {
-        timeLabel.text = alarm.time
+        timeLabel.text = alarm.displayedTime
         onOffSwitch.isOn = alarm.isOn
     }
     

@@ -8,8 +8,8 @@
 import UIKit
 
 protocol AlarmSaving: AnyObject {
-    func saveAlarm(time: String)
-    func editAlarm(at indexPath: IndexPath, time: String)
+    func saveAlarm(alarm: Alarm)
+    func editAlarm(at indexPath: IndexPath, alarm: Alarm)
 }
 
 struct AlarmOption {
@@ -32,35 +32,52 @@ class AlarmDetailViewController: UIViewController {
     private var alarmOptions = [
         [AlarmOption(title: "반복", content: "안 함", type: .disclosureCell),
          AlarmOption(title: "레이블", content: "알람", type: .disclosureCell),
-         AlarmOption(title: "사운드", content: "벨", type: .disclosureCell),
+         AlarmOption(title: "사운드", type: .disclosureCell),
          AlarmOption(title: "다시 알림", type: .switchCell)],
         [AlarmOption(title: "알람 삭제", type: .deleteCell)]
     ]
     
     weak var delegate: AlarmSaving?
     
-    var time = Date()
+//    var time = Date()
     
     var editMode = false
     var indexPath: IndexPath?
     
+    let alarmManager = AlarmManager.shared
+    var alarm = Alarm(time: Date())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        alarmDatePicker.date = time
+        alarmDatePicker.date = alarm.time
         
         alarmOptionTableView.delegate = self
         alarmOptionTableView.dataSource = self
+        
+        configure()
+    }
+    
+    private func configure() {
+        alarmOptions[0][2].content = alarmManager.getSoundTitle(at: alarm.soundIndexPath)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AlarmSoundSegue" {
+            let alarmSoundVC = segue.destination as? AlarmSoundViewController
+            alarmSoundVC?.delegate = self
+            alarmSoundVC?.selectedSoundIndexPath = alarm.soundIndexPath
+        }
     }
     
     @IBAction func didTapSaveButton(_ sender: UIBarButtonItem) {
         
-        time = alarmDatePicker.date
+        alarm.time = alarmDatePicker.date
         
         if editMode, let indexPath = indexPath {
-            delegate?.editAlarm(at: indexPath, time: time.convertToString(format: .displayTime))
+            delegate?.editAlarm(at: indexPath, alarm: alarm)
         } else {
-            delegate?.saveAlarm(time: time.convertToString(format: .displayTime))
+            delegate?.saveAlarm(alarm: alarm)
         }
         
         dismiss(animated: true, completion: nil)
@@ -68,6 +85,16 @@ class AlarmDetailViewController: UIViewController {
     
     @IBAction func didTapCancelButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension AlarmDetailViewController: AlarmOptionSelecting {
+    
+    func alarmSoundSelected(indexPath: IndexPath) {
+        alarm.soundIndexPath = indexPath
+        alarmOptions[0][2].content = alarmManager.getSoundTitle(at: indexPath)
+        let indexPath = IndexPath(row: 2, section: 0)
+        alarmOptionTableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }
 
@@ -92,14 +119,9 @@ extension AlarmDetailViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let storyboard = UIStoryboard(name: "AlarmOptions", bundle: nil)
-        
         switch indexPath.row {
         case 2:
-            guard let vc = storyboard.instantiateViewController(identifier: "AlarmSoundViewController") as? AlarmSoundViewController else { return }
-            
-            vc.title = alarmOptions[indexPath.section][indexPath.row].title
-            navigationController?.pushViewController(vc, animated: true)
+            self.performSegue(withIdentifier: "AlarmSoundSegue", sender: nil)
         default:
             break
         }

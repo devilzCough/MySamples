@@ -10,7 +10,11 @@ import Foundation
 struct Alarm: Comparable {
     
     var id = -1
-    var time: String
+    var time: Date
+    var displayedTime: String {
+        return time.convertToString(format: .displayTime)
+    }
+    var soundIndexPath: IndexPath = IndexPath(row: 0, section: 0)
     var isOn = true
     
     static func < (lhs: Alarm, rhs: Alarm) -> Bool {
@@ -18,15 +22,25 @@ struct Alarm: Comparable {
     }
 }
 
+struct Sound {
+    let title: String
+}
+
 class AlarmManager {
     
     static let shared = AlarmManager()
     
     private var alarms: [[Alarm]] = [
-        [Alarm(time: "오전 10:00"), Alarm(time: "오후 03:20")],
-        [Alarm(time: "오전 05:23", isOn: false), Alarm(time: "오전 07:40", isOn: false)]
+        [Alarm(time: Date()), Alarm(time: Date(timeIntervalSinceNow: 5000))],
+        [Alarm(time: Date(timeIntervalSinceNow: 2300), isOn: false), Alarm(time: Date(timeIntervalSinceNow: 1488), isOn: false)]
     ]
     
+    private let soundList = [
+        [Sound(title: "Alarm Clock"),
+         Sound(title: "Maple Leaf Rag")]
+    ]
+    
+    // Alarms
     var sectionCount: Int {
         get {
             return alarms.count
@@ -41,8 +55,8 @@ class AlarmManager {
         return alarms[section][index]
     }
     
-    func setAlarmTime(to time: String, at indexPath: IndexPath) {
-        alarms[indexPath.section][indexPath.row].time = time
+    func setAlarm(to alarm: Alarm, at indexPath: IndexPath) {
+        alarms[indexPath.section][indexPath.row] = alarm
     }
     
     func add(alarm: Alarm) {
@@ -63,5 +77,22 @@ class AlarmManager {
         let alarm = alarms[indexPath.section].remove(at: indexPath.row)
         alarms[section].append(alarm)
         alarms[section].sort()
+    }
+    
+    // Sounds
+    func getSoundTitle(at indexPath: IndexPath) -> String {
+        return soundList[indexPath.section][indexPath.row].title
+    }
+    
+    
+    
+    var soundSectionCount: Int {
+        get {
+            return soundList.count
+        }
+    }
+    
+    func soundCount(of section: Int) -> Int {
+        return soundList[section].count
     }
 }

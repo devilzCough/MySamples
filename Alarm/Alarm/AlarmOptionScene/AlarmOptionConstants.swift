@@ -7,3 +7,15 @@
 
 import Foundation
 
+//struct AlarmOptionConstants {
+//
+//    private var soundList = [
+//        [Sound(title: "Alarm Clock", isSelected: true),
+//         Sound(title: "Maple Leaf Rag", isSelected: false)]
+//    ]
+//
+//    func getSoundTitle(at indexPath: IndexPath) -> String {
+//        return soundList[indexPath.section][indexPath.row].title
+//    }
+//}
+
