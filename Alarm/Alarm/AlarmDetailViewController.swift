@@ -89,7 +89,19 @@ extension AlarmDetailViewController: UITableViewDelegate, UITableViewDataSource 
         return editMode ? alarmOptions.count : 1
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let storyboard = UIStoryboard(name: "AlarmOptions", bundle: nil)
+        
+        switch indexPath.row {
+        case 2:
+            guard let vc = storyboard.instantiateViewController(identifier: "AlarmSoundViewController") as? AlarmSoundViewController else { return }
+            
+            vc.title = alarmOptions[indexPath.section][indexPath.row].title
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
     }
 }
