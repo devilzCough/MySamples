@@ -21,29 +21,23 @@ class AlarmListViewController: UIViewController {
         "기타"
     ]
     
-    // test
-    let notification = UNUserNotificationCenter.current()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         alarmTableView.delegate = self
         alarmTableView.dataSource = self
         
-        // test
         requestNotificationAuthorization()
     }
     
-    //test
     func requestNotificationAuthorization() {
-        let authOption = UNAuthorizationOptions(arrayLiteral: .alert, .sound)
-        notification.requestAuthorization(options: authOption) { success, error in
+        let authOption = UNAuthorizationOptions(arrayLiteral: .alert, .sound, .badge)
+        alarmManager.notification.requestAuthorization(options: authOption) { success, error in
             if let error = error {
                 print(error)
             }
         }
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let navigation = segue.destination as? UINavigationController {
@@ -64,26 +58,26 @@ class AlarmListViewController: UIViewController {
     
     @IBAction func didTapTestButton(_ sender: UIBarButtonItem) {
         
-        let content = UNMutableNotificationContent()
-
-        content.title = "알람"
-        content.body = "이것은 알림을 테스트 하는 것이다"
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarm.mp3"))
-        
-
-        let seconds: Double = 10
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
-        
-        
-        let request = UNNotificationRequest(identifier: "testNotification",
-                                           content: content,
-                                           trigger: trigger)
-
-        notification.add(request) { error in
-           if let error = error {
-               print("Notification Error: ", error)
-           }
-        }
+//        let content = UNMutableNotificationContent()
+//
+//        content.title = "알람"
+//        content.body = "이것은 알림을 테스트 하는 것이다"
+//        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarm.mp3"))
+//
+//
+//        let seconds: Double = 10
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
+//
+//        
+//        let request = UNNotificationRequest(identifier: "testNotification",
+//                                           content: content,
+//                                           trigger: trigger)
+//
+//        notification.add(request) { error in
+//           if let error = error {
+//               print("Notification Error: ", error)
+//           }
+//        }
     }
 }
 
