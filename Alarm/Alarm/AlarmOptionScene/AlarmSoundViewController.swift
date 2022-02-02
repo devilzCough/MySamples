@@ -60,12 +60,5 @@ extension AlarmSoundViewController: UITableViewDelegate, UITableViewDataSource {
         
         selectedSoundIndexPath = indexPath
         tableView.reloadData()
-        
-        //        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-
-//        tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
 }

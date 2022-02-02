@@ -68,9 +68,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="알람" id="G7T-fh-SVl">
-                        <barButtonItem key="leftBarButtonItem" systemItem="play" id="Rbw-sd-7vz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Rbw-sd-7vz">
                             <connections>
-                                <action selector="didTapTestButton:" destination="BYZ-38-t0r" id="xzt-C0-wUj"/>
+                                <action selector="didTapEditButton:" destination="BYZ-38-t0r" id="HTh-68-exk"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YxI-XO-rZY">
@@ -81,6 +81,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="alarmTableView" destination="JMv-3c-N2r" id="zbh-gH-RaL"/>
+                        <outlet property="editButton" destination="Rbw-sd-7vz" id="5bm-nU-5H8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

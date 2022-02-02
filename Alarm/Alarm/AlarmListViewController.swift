@@ -21,8 +21,13 @@ class AlarmListViewController: UIViewController {
         "기타"
     ]
     
+    @IBOutlet var editButton: UIBarButtonItem!
+    var doneButton: UIBarButtonItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapDoneButton))
     
         alarmTableView.delegate = self
         alarmTableView.dataSource = self
@@ -56,28 +61,17 @@ class AlarmListViewController: UIViewController {
         }
     }
     
-    @IBAction func didTapTestButton(_ sender: UIBarButtonItem) {
+    @objc func didTapDoneButton() {
         
-//        let content = UNMutableNotificationContent()
-//
-//        content.title = "알람"
-//        content.body = "이것은 알림을 테스트 하는 것이다"
-//        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarm.mp3"))
-//
-//
-//        let seconds: Double = 10
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
-//
-//        
-//        let request = UNNotificationRequest(identifier: "testNotification",
-//                                           content: content,
-//                                           trigger: trigger)
-//
-//        notification.add(request) { error in
-//           if let error = error {
-//               print("Notification Error: ", error)
-//           }
-//        }
+        navigationItem.leftBarButtonItem = editButton
+        alarmTableView.setEditing(false, animated: true)
+    }
+    
+    @IBAction func didTapEditButton(_ sender: UIBarButtonItem) {
+        
+        guard !alarmManager.isEmpty else { return }
+        navigationItem.leftBarButtonItem = doneButton
+        alarmTableView.setEditing(true, animated: true)
     }
 }
 
@@ -114,18 +108,14 @@ extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        let delete = UIContextualAction(style: .normal, title: "Delete") { [weak self] _, _, completion in
-            self?.alarmManager.delete(alarmRowAt: indexPath)
-            DispatchQueue.main.async {
-                self?.alarmTableView.reloadData()
-            }
-            completion(true)
+        alarmManager.delete(alarmRowAt: indexPath)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+        
+        if alarmManager.isEmpty {
+            didTapDoneButton()
         }
-        delete.backgroundColor = .red
-        
-        return UISwipeActionsConfiguration(actions: [delete])
     }
     
     // Header

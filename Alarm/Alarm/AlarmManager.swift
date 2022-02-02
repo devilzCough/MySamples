@@ -36,8 +36,8 @@ class AlarmManager {
     let notification = UNUserNotificationCenter.current()
     
     private var alarms: [[Alarm]] = [
-        [Alarm(time: Date(timeIntervalSinceNow: 7000)), Alarm(time: Date(timeIntervalSinceNow: 5000))],
-        [Alarm(time: Date(timeIntervalSinceNow: 2300), isOn: false), Alarm(time: Date(timeIntervalSinceNow: 1488), isOn: false)]
+        [Alarm(time: Date(timeIntervalSinceNow: 5000)), Alarm(time: Date(timeIntervalSinceNow: 7000))],
+        [Alarm(time: Date(timeIntervalSinceNow: 1488), isOn: false), Alarm(time: Date(timeIntervalSinceNow: 1750), isOn: false)]
     ]
     
     private let soundList = [
@@ -49,6 +49,12 @@ class AlarmManager {
     var sectionCount: Int {
         get {
             return alarms.count
+        }
+    }
+    
+    var isEmpty: Bool {
+        get {
+            return alarms[0].isEmpty && alarms[1].isEmpty
         }
     }
     
