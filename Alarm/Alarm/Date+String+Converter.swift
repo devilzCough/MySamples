@@ -8,7 +8,7 @@
 import Foundation
 
 enum DateFormats: String {
-    case displayTime = "a hh:mm"
+    case displayTime = "a h:mm"
     case storedTime = "HH:mm"
 }
 
