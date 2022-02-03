@@ -75,7 +75,7 @@ class AlarmListViewController: UIViewController {
     }
 }
 
-extension AlarmListViewController: AlarmSaving {
+extension AlarmListViewController: AlarmEditingDelegate {
     
     func saveAlarm(alarm: Alarm) {
         alarmManager.add(alarm: alarm)
@@ -85,6 +85,11 @@ extension AlarmListViewController: AlarmSaving {
     func editAlarm(at indexPath: IndexPath, alarm: Alarm) {
         alarmManager.setAlarm(to: alarm, at: indexPath)
         alarmTableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
+    func deleteAlarm(at indexPath: IndexPath) {
+        alarmManager.delete(alarmRowAt: indexPath)
+        alarmTableView.reloadData()
     }
 }
 

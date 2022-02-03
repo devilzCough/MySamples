@@ -7,9 +7,10 @@
 
 import UIKit
 
-protocol AlarmSaving: AnyObject {
+protocol AlarmEditingDelegate: AnyObject {
     func saveAlarm(alarm: Alarm)
     func editAlarm(at indexPath: IndexPath, alarm: Alarm)
+    func deleteAlarm(at indexPath: IndexPath)
 }
 
 struct AlarmOption {
@@ -37,9 +38,7 @@ class AlarmDetailViewController: UIViewController {
         [AlarmOption(title: "알람 삭제", type: .deleteCell)]
     ]
     
-    weak var delegate: AlarmSaving?
-    
-//    var time = Date()
+    weak var delegate: AlarmEditingDelegate?
     
     var editMode = false
     var indexPath: IndexPath?
@@ -117,7 +116,13 @@ extension AlarmDetailViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 1, let selectedIndexPath = self.indexPath {
+            delegate?.deleteAlarm(at: selectedIndexPath)
+            dismiss(animated: true, completion: nil)
+        }
         
         switch indexPath.row {
         case 2:
