@@ -8,6 +8,7 @@
 import UIKit
 
 protocol AlarmOptionSelecting: AnyObject {
+    func alarmLabelTyped(as label: String)
     func alarmSoundSelected(indexPath: IndexPath)
 }
 

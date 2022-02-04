@@ -161,6 +161,7 @@
                         <outlet property="alarmDatePicker" destination="4sb-GO-PoS" id="nK6-Vq-5uS"/>
                         <outlet property="alarmOptionTableView" destination="Kcr-0i-hHM" id="vpG-o3-gGg"/>
                         <segue destination="7DJ-Xz-qy1" kind="show" identifier="AlarmSoundSegue" id="yr8-dB-Cth"/>
+                        <segue destination="Cvg-K5-Fd9" kind="show" identifier="AlarmLabelSegue" id="WEI-PE-y9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fk1-X3-mZQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -212,7 +213,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAu-jJ-dJP">
-                                <rect key="frame" x="169" y="432.5" width="76.5" height="31"/>
+                                <rect key="frame" x="169" y="432.5" width="76" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="알람 끄기"/>
                                 <connections>
@@ -288,7 +289,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Pv-gm-TU1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3009" y="84"/>
+            <point key="canvasLocation" x="3016" y="541"/>
+        </scene>
+        <!--레이블-->
+        <scene sceneID="Fr6-5d-VJW">
+            <objects>
+                <viewController id="Cvg-K5-Fd9" customClass="AlarmLabelViewController" customModule="Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yk3-Q9-7Hr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JZ7-oc-WBD">
+                                <rect key="frame" x="8" y="334" width="398" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ORw-C1-ShT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JZ7-oc-WBD" firstAttribute="centerY" secondItem="Yk3-Q9-7Hr" secondAttribute="centerY" constant="-70" id="4U7-d2-Qf4"/>
+                            <constraint firstItem="JZ7-oc-WBD" firstAttribute="centerX" secondItem="Yk3-Q9-7Hr" secondAttribute="centerX" id="EoF-Wn-4dy"/>
+                            <constraint firstItem="JZ7-oc-WBD" firstAttribute="leading" secondItem="ORw-C1-ShT" secondAttribute="leading" constant="8" id="VaB-bQ-Kv6"/>
+                            <constraint firstItem="ORw-C1-ShT" firstAttribute="trailing" secondItem="JZ7-oc-WBD" secondAttribute="trailing" constant="8" id="Zus-76-pu4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="레이블" id="NPi-te-Nnu"/>
+                    <connections>
+                        <outlet property="labelTextField" destination="JZ7-oc-WBD" id="Nsl-5G-rZd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6op-dx-u10" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3016" y="-153"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

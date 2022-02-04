@@ -17,8 +17,11 @@ struct Alarm: Comparable {
     var displayedTime: String {
         return time.convertToString(format: .displayTime)
     }
-    var soundIndexPath: IndexPath = IndexPath(row: 0, section: 0)
     var isOn = true
+    
+    // options
+    var label = "알람"
+    var soundIndexPath = IndexPath(row: 0, section: 0)
     
     static func < (lhs: Alarm, rhs: Alarm) -> Bool {
         return lhs.time < rhs.time
@@ -54,7 +57,7 @@ class AlarmManager {
     
     var isEmpty: Bool {
         get {
-            return alarms[0].isEmpty && alarms[1].isEmpty
+            return alarms.isEmpty
         }
     }
     
@@ -112,7 +115,7 @@ class AlarmManager {
         let content = UNMutableNotificationContent()
 
         content.title = "알람"
-        content.body = "이것은 알림을 테스트 하는 것이다"
+        content.body = alarm.label
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: getSoundTitle(at: alarm.soundIndexPath) + ".mp3"))
         
         let calendar = Calendar.current
