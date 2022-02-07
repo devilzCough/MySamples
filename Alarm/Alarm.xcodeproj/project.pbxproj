@@ -7,23 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D8420F02795B9F100478DF6 /* AlarmOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8420EF2795B9F100478DF6 /* AlarmOptionTableViewCell.swift */; };
+		0D8420F52796F2F200478DF6 /* AlarmSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8420F42796F2F200478DF6 /* AlarmSoundViewController.swift */; };
+		0D8420F92796FF9900478DF6 /* Maple Leaf Rag.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D8420F82796FF9900478DF6 /* Maple Leaf Rag.mp3 */; };
+		0D86533A278C70680088C498 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D865339278C70680088C498 /* AlarmManager.swift */; };
+		0D86533C278EAF4C0088C498 /* Alarm Clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D86533B278EAF4C0088C498 /* Alarm Clock.mp3 */; };
+		0D86533E278EB3160088C498 /* AlarmOffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D86533D278EB3160088C498 /* AlarmOffViewController.swift */; };
 		0D8CB7E5278C435100C02B77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8CB7E4278C435100C02B77 /* AppDelegate.swift */; };
 		0D8CB7E7278C435100C02B77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8CB7E6278C435100C02B77 /* SceneDelegate.swift */; };
-		0D8CB7E9278C435100C02B77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8CB7E8278C435100C02B77 /* ViewController.swift */; };
+		0D8CB7E9278C435100C02B77 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8CB7E8278C435100C02B77 /* AlarmListViewController.swift */; };
 		0D8CB7EC278C435100C02B77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8CB7EA278C435100C02B77 /* Main.storyboard */; };
 		0D8CB7EE278C435200C02B77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D8CB7ED278C435200C02B77 /* Assets.xcassets */; };
 		0D8CB7F1278C435200C02B77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8CB7EF278C435200C02B77 /* LaunchScreen.storyboard */; };
+		0D8CB7F9278C471F00C02B77 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8CB7F8278C471F00C02B77 /* AlarmTableViewCell.swift */; };
+		0D8CB7FB278C48B900C02B77 /* AlarmDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8CB7FA278C48B900C02B77 /* AlarmDetailViewController.swift */; };
+		0D8CB7FD278C4CA600C02B77 /* Date+String+Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8CB7FC278C4CA600C02B77 /* Date+String+Converter.swift */; };
+		0DBEB87327AD593B0059A198 /* AlarmLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBEB87227AD593B0059A198 /* AlarmLabelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D8420EF2795B9F100478DF6 /* AlarmOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmOptionTableViewCell.swift; sourceTree = "<group>"; };
+		0D8420F42796F2F200478DF6 /* AlarmSoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSoundViewController.swift; sourceTree = "<group>"; };
+		0D8420F82796FF9900478DF6 /* Maple Leaf Rag.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Maple Leaf Rag.mp3"; path = "../../../../../Sounds/Clip/Maple Leaf Rag.mp3"; sourceTree = "<group>"; };
+		0D865339278C70680088C498 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
+		0D86533B278EAF4C0088C498 /* Alarm Clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Alarm Clock.mp3"; path = "../../../../../../../Downloads/Alarm Clock.mp3"; sourceTree = "<group>"; };
+		0D86533D278EB3160088C498 /* AlarmOffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmOffViewController.swift; sourceTree = "<group>"; };
 		0D8CB7E1278C435100C02B77 /* Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D8CB7E4278C435100C02B77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D8CB7E6278C435100C02B77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0D8CB7E8278C435100C02B77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0D8CB7E8278C435100C02B77 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		0D8CB7EB278C435100C02B77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D8CB7ED278C435200C02B77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D8CB7F0278C435200C02B77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D8CB7F2278C435200C02B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D8CB7F8278C471F00C02B77 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		0D8CB7FA278C48B900C02B77 /* AlarmDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailViewController.swift; sourceTree = "<group>"; };
+		0D8CB7FC278C4CA600C02B77 /* Date+String+Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String+Converter.swift"; sourceTree = "<group>"; };
+		0DBEB87227AD593B0059A198 /* AlarmLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmLabelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +57,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D8420F32796F2B300478DF6 /* AlarmOptionScene */ = {
+			isa = PBXGroup;
+			children = (
+				0D8420EF2795B9F100478DF6 /* AlarmOptionTableViewCell.swift */,
+				0D8420F42796F2F200478DF6 /* AlarmSoundViewController.swift */,
+				0DBEB87227AD593B0059A198 /* AlarmLabelViewController.swift */,
+			);
+			path = AlarmOptionScene;
+			sourceTree = "<group>";
+		};
 		0D8CB7D8278C435100C02B77 = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +88,19 @@
 			children = (
 				0D8CB7E4278C435100C02B77 /* AppDelegate.swift */,
 				0D8CB7E6278C435100C02B77 /* SceneDelegate.swift */,
-				0D8CB7E8278C435100C02B77 /* ViewController.swift */,
+				0D8CB7E8278C435100C02B77 /* AlarmListViewController.swift */,
+				0D8CB7F8278C471F00C02B77 /* AlarmTableViewCell.swift */,
+				0D8CB7FA278C48B900C02B77 /* AlarmDetailViewController.swift */,
+				0D86533D278EB3160088C498 /* AlarmOffViewController.swift */,
 				0D8CB7EA278C435100C02B77 /* Main.storyboard */,
+				0D8420F32796F2B300478DF6 /* AlarmOptionScene */,
 				0D8CB7ED278C435200C02B77 /* Assets.xcassets */,
 				0D8CB7EF278C435200C02B77 /* LaunchScreen.storyboard */,
 				0D8CB7F2278C435200C02B77 /* Info.plist */,
+				0D8CB7FC278C4CA600C02B77 /* Date+String+Converter.swift */,
+				0D865339278C70680088C498 /* AlarmManager.swift */,
+				0D86533B278EAF4C0088C498 /* Alarm Clock.mp3 */,
+				0D8420F82796FF9900478DF6 /* Maple Leaf Rag.mp3 */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -125,6 +163,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D86533C278EAF4C0088C498 /* Alarm Clock.mp3 in Resources */,
+				0D8420F92796FF9900478DF6 /* Maple Leaf Rag.mp3 in Resources */,
 				0D8CB7F1278C435200C02B77 /* LaunchScreen.storyboard in Resources */,
 				0D8CB7EE278C435200C02B77 /* Assets.xcassets in Resources */,
 				0D8CB7EC278C435100C02B77 /* Main.storyboard in Resources */,
@@ -138,9 +178,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D8CB7E9278C435100C02B77 /* ViewController.swift in Sources */,
+				0D86533A278C70680088C498 /* AlarmManager.swift in Sources */,
+				0DBEB87327AD593B0059A198 /* AlarmLabelViewController.swift in Sources */,
+				0D8420F02795B9F100478DF6 /* AlarmOptionTableViewCell.swift in Sources */,
+				0D8CB7E9278C435100C02B77 /* AlarmListViewController.swift in Sources */,
+				0D8CB7FB278C48B900C02B77 /* AlarmDetailViewController.swift in Sources */,
 				0D8CB7E5278C435100C02B77 /* AppDelegate.swift in Sources */,
+				0D8CB7FD278C4CA600C02B77 /* Date+String+Converter.swift in Sources */,
 				0D8CB7E7278C435100C02B77 /* SceneDelegate.swift in Sources */,
+				0D86533E278EB3160088C498 /* AlarmOffViewController.swift in Sources */,
+				0D8420F52796F2F200478DF6 /* AlarmSoundViewController.swift in Sources */,
+				0D8CB7F9278C471F00C02B77 /* AlarmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
